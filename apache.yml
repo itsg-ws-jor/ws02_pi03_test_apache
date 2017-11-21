@@ -3,13 +3,16 @@
   vars_files:
     - vars/main.yml
   pre_tasks:
-    - file:
+    - name: "Create document root"
+      file:
         path: "{{ docroot }}"
         state: directory
         owner: www-data
         group: www-data
         mode: 0755
-    - copy:
+    - name: "Copy file index.html"
+      copy:
+        name: "Create document root."
         src: files/index.html
         dest: "{{ docroot }}"
         owner: www-data
