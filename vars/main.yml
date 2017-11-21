@@ -1,5 +1,5 @@
 ---
 apache_listen_port: 8080
-docroot: "/var/www/vhosts/example_com"
+docroot: "/var/www/vhosts/{{ ansible_default_ipv4.address }}"
 apache_vhosts:
-  - {servername: "10.2.78.103", documentroot: "{{ docroot }}"}
+  - {servername: "{{ ansible_default_ipv4.address }}", documentroot: "{{ docroot }}"}
