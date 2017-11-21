@@ -4,11 +4,11 @@
     - vars/main.yml
   pre_tasks:
     - file:
-      path: "{{ docroot }}"
-	  state: directory
-	  mode: 0755
-	  owner: www-data
-	  group: www-data
+        path: "{{ docroot }}"
+        state: directory
+        mode: 0755
+        owner: www-data
+        group: www-data
   roles:
     - { role: ansible-role-apache }
   
